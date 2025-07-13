@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>nadiamoe/renovate-config",
+  ],
+  "customManagers": [
+    {
+      // Update prosody version from alpine packages.
+      "customType": "regex",
+      "managerFilePatterns": [
+        "Dockerfile",
+      ],
+      "matchStrings": [
+        "GLADOS_VERSION=(?<currentValue>[-.\\w]+)"
+      ],
+      "depNameTemplate": "dnhkng/GLaDOS",
+      "datasourceTemplate": "github-tags",
+      "versioningTemplate": "loose", // The most lenient versioning renovate supports.
+    },
+  ],
+}
