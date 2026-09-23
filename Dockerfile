@@ -6,5 +6,5 @@ ADD https://github.com/dnhkng/GLaDOS/releases/download/${GLADOS_VERSION}/glados.
 # TODO: Version this one too. For now, the tag seems very old.
 ADD https://raw.githubusercontent.com/dnhkng/GLaDOS/refs/heads/main/models/TTS/glados.json /glados.onnx.json
 
-FROM busybox:1.37.0@sha256:4f93577242de6585bb7211f687673fc8a715571fdec8cf0901fd0724dc05dea2
+FROM busybox:1.37.0@sha256:bdf57e528e45e4433820e045b29b4597825a1c9e38353532d90a01445013f82e
 COPY --from=downloader --chmod=444 / /glados
